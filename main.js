@@ -81,8 +81,8 @@ document.getElementById('book-now').addEventListener('click', function () {
 
     //this function will show booking information in alert 
     function bookingInformation() {
-        let firstClass='First Class ($150) - '+document.getElementById('firstClass-count').value+' Ticket',
-        economyClass='Economy ($100) - '+document.getElementById('economyClass-count').value+' Ticket',
+        let firstClass='First Class ($150) - '+document.getElementById('firstClass-count').value+' Tickets',
+        economyClass='Economy ($100) - '+document.getElementById('economyClass-count').value+' Tickets',
         sub='Subtotal - $ '+document.getElementById('sub-total').innerText,
         vat='Charge 10% VAT - $ '+document.getElementById('vat').innerText,
         grand='Total - $ '+document.getElementById('grand-total').innerText;
