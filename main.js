@@ -48,7 +48,7 @@ function getInputValue(price) {
 
 }
 
-//checkout event
+//checkout event for book now button
 document.getElementById('book-now').addEventListener('click', function () {
     let firstClassCount = document.getElementById('firstClass-count').value;
     let economyClassCount = document.getElementById('economyClass-count').value;
@@ -79,6 +79,7 @@ document.getElementById('book-now').addEventListener('click', function () {
 
     }
 
+    //this function will show booking information in alert 
     function bookingInformation() {
         let firstClass='First Class ($150) - '+document.getElementById('firstClass-count').value+' Ticket',
         economyClass='Economy ($100) - '+document.getElementById('economyClass-count').value+' Ticket',
