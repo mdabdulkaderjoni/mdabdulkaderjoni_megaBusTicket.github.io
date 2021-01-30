@@ -61,40 +61,89 @@ document.getElementById('book-now').addEventListener('click', function () {
 
         });
     }
-    else {
+    //else {
+    
+        // swal({
+        //     title: "Thank You",
+        //     text: bookingInformation(),
+        //     icon: "success",
+        //     button: "Ok",
+
+        // }); 
+        else {
         swal({
-            title: "Thank You",
-            text: bookingInformation(),
-            icon: "success",
-            button: "Ok",
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              swal({
+                text: bookingInformation(),
+                icon: "success",
+              });
+            } else {
+              swal("Your imaginary file is safe!");
+            }
+          });
+        
+        
 
-        });    
+        // document.getElementById('firstClass-count').value = '0';
+        // document.getElementById('economyClass-count').value = '0';
+        // document.getElementById('sub-total').innerText = '0';
+        // document.getElementById('vat').innerText = '0';
+        // document.getElementById('grand-total').innerText = '0';
 
-        document.getElementById('firstClass-count').value = '0';
+
+    }
+
+    // document.getElementById('firstClass-count').value = '0';
+    //     document.getElementById('economyClass-count').value = '0';
+    //     document.getElementById('sub-total').innerText = '0';
+    //     document.getElementById('vat').innerText = '0';
+    //     document.getElementById('grand-total').innerText = '0';
+
+    // //this function will show booking information in alert 
+    // function bookingInformation() {
+    //     let firstClass='First Class ($150) - '+document.getElementById('firstClass-count').value+' Tickets',
+    //     economyClass='Economy ($100) - '+document.getElementById('economyClass-count').value+' Tickets\n',
+    //     sub='Subtotal - $ '+document.getElementById('sub-total').innerText,
+    //     vat='Charge 10% VAT - $ '+document.getElementById('vat').innerText+'\n',
+    //     grand='Total - $ '+document.getElementById('grand-total').innerText;
+        
+    //     let itemList = ["You have successfully  booked your ticket\n",firstClass,economyClass,sub,vat,grand];
+    //     let newList =''
+    //     for (let i = 0; i < itemList.length; i++) {
+    //         newList += ' ' + itemList[i]+'\n';
+    //     }
+    //     return newList;
+    // }
+
+    
+
+})
+
+//this function will show booking information in alert 
+function bookingInformation() {
+    let firstClass='First Class ($150) - '+document.getElementById('firstClass-count').value+' Tickets',
+    economyClass='Economy ($100) - '+document.getElementById('economyClass-count').value+' Tickets\n',
+    sub='Subtotal - $ '+document.getElementById('sub-total').innerText,
+    vat='Charge 10% VAT - $ '+document.getElementById('vat').innerText+'\n',
+    grand='Total - $ '+document.getElementById('grand-total').innerText;
+    
+    let itemList = ["You have successfully  booked your ticket\n",firstClass,economyClass,sub,vat,grand];
+    let newList =''
+    for (let i = 0; i < itemList.length; i++) {
+        newList += ' ' + itemList[i]+'\n';
+    }
+    document.getElementById('firstClass-count').value = '0';
         document.getElementById('economyClass-count').value = '0';
         document.getElementById('sub-total').innerText = '0';
         document.getElementById('vat').innerText = '0';
         document.getElementById('grand-total').innerText = '0';
-
-
-    }
-
-    //this function will show booking information in alert 
-    function bookingInformation() {
-        let firstClass='First Class ($150) - '+document.getElementById('firstClass-count').value+' Tickets',
-        economyClass='Economy ($100) - '+document.getElementById('economyClass-count').value+' Tickets\n',
-        sub='Subtotal - $ '+document.getElementById('sub-total').innerText,
-        vat='Charge 10% VAT - $ '+document.getElementById('vat').innerText+'\n',
-        grand='Total - $ '+document.getElementById('grand-total').innerText;
-        
-        let itemList = ["You have successfully  booked your ticket\n",firstClass,economyClass,sub,vat,grand];
-        let newList =''
-        for (let i = 0; i < itemList.length; i++) {
-            newList += ' ' + itemList[i]+'\n';
-        }
-        return newList;
-    }
-
-})
-
+    return newList;
+}
 
